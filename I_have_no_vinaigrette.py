@@ -21,5 +21,8 @@ def i_have_no_vinaigrette():
     else:
         print("Invalid input")
 
+    if random_date.weekday() == 0:
+        print("I have no vinaigrette!")
+
 
 i_have_no_vinaigrette()
