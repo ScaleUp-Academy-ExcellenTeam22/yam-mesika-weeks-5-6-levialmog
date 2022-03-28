@@ -1,15 +1,18 @@
-def cup_of_join(*args, sep='-'):
-    res = []
-
-    if args is None:
-        print(res)
-
-    for value in args:
-        res.extend(value)
-        res.append(sep)
-
-    res.pop()
-    print(res)
+import itertools
 
 
-cup_of_join([1, 2], [2, 3], [3, 4])
+def cup_of_join(*lists, separator='-'):
+    list_of_lists = []
+
+    if not lists:
+        return list_of_lists
+
+    [one_list.append(separator) for one_list in lists]
+    list_of_lists = list(itertools.chain(*lists))
+    list_of_lists.pop()
+
+    return list_of_lists
+
+
+if __name__ == "__main__":
+    print(cup_of_join([1, 2], [2, 3], [3, 4], separator='*'))
