@@ -4,9 +4,16 @@ import re
 
 
 def days_between(start_date, end_date):
-    d1 = datetime.datetime.strptime(start_date, "%Y-%m-%d")
-    d2 = datetime.datetime.strptime(end_date, "%Y-%m-%d")
-    return abs(d1 - d2)
+    """
+    The function receives two dates in string format, converts them to datetime format
+    and returns a datetime object that represents the difference between start_date and end_date (in days)
+    :param start_date: date in string format.
+    :param end_date: date in string format.
+    :return: the difference between start_date and end_date.
+    """
+    start_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
+    end_date = datetime.datetime.strptime(end_date, "%Y-%m-%d")
+    return abs(start_date - end_date)
 
 
 def i_have_no_vinaigrette(start_date, end_date):
